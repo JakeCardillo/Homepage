@@ -1,0 +1,153 @@
+<!--
+  File: /~jcardill/public_html/index.html
+  Assignment: Homework 4 - GUI Programming I 91.61
+  Jake Cardillo, UMASS Lowell Student
+  jacob_cardillo@student.uml.edu
+
+  In this assignment I used bootstrap to remake my home page. I used a template
+  from W3 schools to help get started. The template is availible here:
+  https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_webpage&stacked=h
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Homepage - Jake Cardillo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap setup links-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 200%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+  </style>
+</head>
+
+<body>
+<!-- Nav Bar setup-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!-- Hamburger menu -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="HW4/beans.html">J</a>
+    </div>
+
+    <!-- Homeworks along navbar, will collapse into hamburger menu when too small -->
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="HW2/index.html">HW2</a></li>
+        <li><a href="HW3/index.html">HW3</a></li>
+        <li><a href="HW4/index.html">HW4</a></li>
+        <li><a href="#">HW5</a></li>
+        <li><a href="#">HW6</a></li>
+        <li><a href="#">HW7</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Links to GitHub and LinkedIn -->
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <div class="list-group">
+        <a class="list-group-item" href="https://github.com/JakeCardillo?tab=repositories">GitHub</a>
+        <a class="list-group-item" href="https://www.linkedin.com/in/jacob-cardillo-1824921a2/">LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- About Me section -->
+    <div class="col-sm-8 text-left">
+      <h1>Jake Cardillo</h1>
+
+      <p>I am a senior Computer Science student at UMASS Lowell.
+        My focus is in Artificial Intelligence and Reinforcement Learning. During my
+        time at UML I've had a chance to work on some interesting and difficult projects,
+        such as writing my own programming language from scratch, and designing my own
+        platformer game and creating an AI that can solve it in an efficient way.
+      <br> <br>
+        In the future I hope to work on products that involve AI in non-Computer Science fields.
+        I like automating tasks that occur in real life and finding ways to make my life more efficient
+        and I think that I would enjoy doing that for a job. I also have an interest in machining and CNC
+        work so that will probably be my focus.
+      <br> <br>
+        In my free time, I enjoy playing the drums, painting, and reading. I have also started
+        repairing antique hand tools that my grandfather collects.
+      </p>
+
+      <hr>
+
+      <!-- Bottom section split up into classes taken and relevant skills -->
+      <div class="col-sm-6">
+        <h3>CS and Math Classes Taken</h3>
+        <p>  Computer Science Classes Taken </p>
+        <ul> <li> COMP 1-4 </li> <li> Assembly </li> <li> Logic Design </li>
+          <li> Foundations of Comp. Sci. </li> <li> Artificial Intelligence </li> <li> Machine Learning </li>
+          <li> Operating Systems </li> <li> Organization of Programming Languages </li> <li> Mobile Robotics </li>
+          <li> Analysis of Alogorithms </li> <li> Computer Architecture </li> </ul>
+        <p> Math Classes </p>
+        <ul> <li> Calc 1-3 </li> <li> Discrete Structures 1 & 2 </li> <li> Probability and Statistics </li>
+          <li> Linear Algebra </li> <li> Differential Equations </li> </ul>
+      </div>
+
+      <div class="col-sm-6">
+        <h3>Relevant Skills</h3>
+        <p> Proficient in the following languages: </p>
+        <ul> <li> C/C++ </li> <li> Java </li> <li> Python </li> <li> Some experience in HTML & CSS</li> </ul>
+        <p> Academic Focus in: </p>
+        <ul> <li> Reinforcement Learning </li> <li> Robotics/Motion Control </li> <li> Stochastic and Deterministic Search Alogorithms </li> </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Footer containing contact information -->
+<footer class="container-fluid text-center">
+  <h3> Contact </h3>
+  <p>UML Email: Jacob_Cardillo@student.uml.edu<br /> Personal Email: jcardillo@outlook.com</p>
+</footer>
+
+</body>
+</html>
