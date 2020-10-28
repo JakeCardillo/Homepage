@@ -1,0 +1,123 @@
+<!--
+    mult_table.html
+    Jake Cardillo
+    Homework 5 - GUI Programming I
+    UMASS Lowell Comp Sci
+    jacob_cardillo@student.uml.edu
+
+    The following page contains a form to enter 4 numbers.
+    These numbers are then made into a multiplication table.
+    Error handling and table creation has been done in table.js.
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+
+    <link rel="stylesheet" href="table_styling.css"></link>
+
+  </head>
+  <body>
+    <h2 id="title">Multiplication Table Generator</h2>
+    <fieldset>
+      <legend>Please enter your 4 numbers below:</legend>
+
+      <form method="get" name="minMax" action="">
+
+        <label for="minX">Minimum X Value:</label>
+        <input type="number" name="minX" id="minX"><br><br>
+        <label for="maxX">Maximum X Value:</label>
+        <input type="number" name="maxX" id="maxX"><br><br>
+        <label for="minY">Minimum Y Value:</label>
+        <input type="number" name="minY" id="minY"><br><br>
+        <label for="maxY">Maximum Y Value:</label>
+        <input type="number" name="maxY" id="maxY"><br><br>
+
+        <input type="button" value="Generate Table" onClick="createTable()">
+      </form>
+
+      <p id="errors"></p>
+    </fieldset>
+
+    <div id="mTable">
+      <script type="text/javascript">
+        function createTable() {
+          //get numbers
+          var minX = document.forms["minMax"]["minX"].value;
+          var maxX = document.forms["minMax"]["maxX"].value;
+          var minY = document.forms["minMax"]["minY"].value;
+          var maxY = document.forms["minMax"]["maxY"].value;
+
+          var errors = document.getElementById("errors");
+
+          if (minX > maxX)
+          {
+            var temp = minX;
+            minX = maxX;
+            maxX = temp;
+            errors.innerHTML = "Warning! Min value larger than max value. Values have been switched";
+          }
+
+          if (minY > maxY)
+          {
+            var temp = minY;
+            minY = maxY;
+            maxY = temp;
+            errors.innerHTML = "Warning! Min value larger than max value. Values have been switched";
+          }
+
+          //create the table, if it doesn't exist
+          var table = document.createElement('table')
+
+          //create the sides
+          var thead = table.createTHead();
+          var row = thead.insertRow();
+
+          //0 origin
+          var th = document.createElement('th');
+          var text = document.createTextNode("x");
+          th.appendChild(text);
+          row.appendChild(th);
+
+          //headings for x axis
+          for (var i = minX; i <= maxX; i++)
+          {
+            var th = document.createElement('th');
+            var text = document.createTextNode(i);
+            th.appendChild(text);
+            row.appendChild(th);
+          }
+
+          //fill out rows
+          for (var i = minY; i <= maxY; i++)
+          {
+            //create a row
+            var tr = document.createElement('tr');
+
+            //create the header for that row
+            var th = document.createElement('th');
+            var text = document.createTextNode(i);
+            th.appendChild(text);
+            tr.appendChild(th);
+
+            //fill out the cells in each row
+            for (var j = minX; j <= maxX; j++)
+            {
+              var product = i * j;
+
+              var td = document.createElement('td');
+              var text = document.createTextNode(product);
+              td.appendChild(text);
+              tr.appendChild(td);
+            }
+            table.appendChild(tr);
+          }
+          document.body.appendChild(table);
+        }
+      </script>
+    </div>
+
+  </body>
+</html>
