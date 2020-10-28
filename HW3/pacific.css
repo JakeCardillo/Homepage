@@ -1,0 +1,155 @@
+/* Jake Cardillo
+	 GUI Homework 3 */
+
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+}
+
+/* Body Styling
+			- set background to gradient that ends and continues as a solid color
+			- sizing and positioning of body
+			- font stuff
+*/
+body {
+	background-color: #00569f;
+	background-image: linear-gradient(#eff4fa,#00569f);
+	background-repeat: no-repeat;
+	color: #666666;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	min-width: 600px;
+	width: 80%;
+	margin: auto;
+	padding-top: 20px;
+}
+
+/* Set-up for grid based layout
+			- 2 columns to split into nav bar and other
+			- 3 rows for header, content, footer
+*/
+#wrapper {
+	display: grid;
+	grid-template-columns: 250px 1fr;
+	grid-template-rows: 75px auto 50px;
+}
+
+/* Nav Styling
+			- grid alignment
+			- font and bullet styling
+			- margin/padding
+			- background gradient
+			- link styling
+*/
+nav {
+	grid-column: 1;
+	grid-row: 2/4;
+}
+nav ul {
+	font-size: 1.2em;
+	list-style-type: none;
+
+	background-image: linear-gradient(#90c8e3,#8ec8e8);
+
+	margin: 0;
+	padding: 20px;
+	width: 250px;
+	height: 600px;
+}
+li a {
+	display: block;
+	width: 100px;
+	padding-bottom: 2px;
+
+	color: #141a3f;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 900;
+}
+nav a:visited {
+	color: #344873;
+}
+nav a:hover {
+	color: #FFFFFF;
+}
+
+/* Header Styling
+			- grid alignment
+			- background image and color
+			- text styling
+*/
+header {
+	grid-column: 1/3;
+	grid-row: 1;
+
+	background-image: url("sunset.jpg"), linear-gradient(#000034,#000034);
+	background-position: right, left;
+	background-repeat: no-repeat;
+	color: #f7f1f7;
+
+	padding-left: 15px;
+}
+h2 {
+	color: #3399CC;
+	font-weight: 900;
+	font-size: 30px;
+
+	margin: 0;
+	padding-bottom: 15px;
+}
+h1,
+h2 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Text styling for resort name */
+.resort {
+	color: #71829e;
+	font-weight: bold;
+	font-size: 110%;
+}
+
+/* Content alignment and sizing*/
+#content {
+	grid-column: 2/3;
+	grid-row: 2;
+	background-color: white;
+	padding: 20px;
+	margin: 0;
+}
+
+/* Bullet styling*/
+#content > ul {
+	list-style-image: url("marker.gif");
+	list-style-position: inside;
+}
+/* Image styling */
+#content > img {
+	float: left;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Footer Styling
+			- font styling
+			- grid alignment
+			- background
+*/
+#contact {
+	font-size: 90%;
+}
+dt {
+	color: #000033;
+}
+footer {
+	grid-column: 2;
+	grid-row: 3;
+	padding-left: 20px;
+
+	font-family: Georgia, "Times New Roman", serif;
+	font-style: italic;
+
+	background-color: white;
+}
