@@ -1,0 +1,75 @@
+/*
+File: /~jcardill/public_html/CSS/style.css
+Assignment: 91.61 GUI Programming I - Homework 2
+Jake Cardillo, UMASS Lowell Computer Science Student, jacob_cardillo@student.uml.edu
+
+This is a starter website created for Homework 2. It will be updated later with further features,
+and serve as the homepage for all other projects in this class.
+
+Updated 9/21/2020
+*/
+
+* { box-sizing: border-box;}
+
+/* General setup for background and text */
+body {
+  background-color: #424242;
+  font-family: Arial, Helvetica, sans-serif;
+  color:LightGray;
+}
+
+/* Heading spacing and text management */
+.header {
+  padding: 30px;
+  text-align: center;
+}
+h1 {
+  font-size: 35px;
+  color: Snow;
+}
+.header > p {
+  font-size: 20px;
+  color: #999999;
+}
+
+/* Creation of 3 blocks that align side by side*/
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+.column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  border-style: double;
+  border-width: 0px 5px;
+  border-color: DarkGoldenRod;
+}
+
+/* Content styling for blocks */
+h2 {
+  font-variant: small-caps;
+  color: Snow;
+}
+ul {
+  color: #999999;
+}
+a {
+  font-size: 20px;
+  font-weight: bold;
+  color: Snow;
+}
+
+/* Horizontal Rule Styling, same color as box borders*/
+hr {
+  border: 1px solid DarkGoldenRod;
+}
+
+/* Footer text styling and management */
+.footer {
+  text-align: center;
+}
+.footer > p {
+  color: #999999;
+}
