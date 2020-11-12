@@ -1,3 +1,58 @@
+/*
+Jake Cardillo
+Homework 6 - GUI Programming I
+UMASS Lowell Comp Sci
+jacob_cardillo@student.uml.edu
+
+This file contains the function that creates the multiplication table and
+validates the form
+*/
+
+
+//Validation
+$(document).ready(function() {
+  $("#myForm").validate({
+    rules: { //all inputs required, no numbers over 4 digits
+      minX: {
+        required: true,
+        maxlength: 3
+      },
+      maxX: {
+        required: true,
+        maxlength: 3
+      },
+      minY: {
+        required: true,
+        maxlength: 3
+      },
+      maxY: {
+        required: true,
+        maxlength: 3
+      }
+    },
+    messages: {
+      minX: {
+        required: "Please enter a minimum value for x",
+        maxlength: "Please pick a number less than 4 digits"
+      },
+      maxX: {
+        required: "Please enter a maximum value for x",
+        maxlength: "Please pick a number less than 4 digits"
+      },
+      minY: {
+        required: "Please enter a minimum value for y",
+        maxlength: "Please pick a number less than 4 digits"
+      },
+      maxY: {
+        required: "Please enter a maximum value for y",
+        maxlength: "Please pick a number less than 4 digits"
+      },
+    }, //I cannot get the submitHandler to work, the validation never runs
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});
 
 
 function createTable() {
@@ -25,14 +80,15 @@ function createTable() {
     errors.innerHTML = "Warning! Min value larger than max value. Values have been switched";
   }
 
+  //remove the old table if it exists
   var oldTable = document.getElementById('myTable');
-  if( oldTable != null){
+  if(oldTable != null){
     oldTable.parentNode.removeChild(oldTable);
   }
 
-  //create the table, if it doesn't exist
+  //create the new table
   var table = document.createElement('table')
-  table.id = "myTable";
+  table.id = "myTable"
 
   //create the sides
   var thead = table.createTHead();

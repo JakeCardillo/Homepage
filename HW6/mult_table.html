@@ -7,7 +7,7 @@
 
     The following page contains a form to enter 4 numbers.
     These numbers are then made into a multiplication table.
-    Error handling and table creation has been done in the createTable function.
+    Error handling and table creation has been done in the table.js file.
 -->
 
 <!DOCTYPE html>
@@ -30,74 +30,25 @@
     <fieldset>
       <legend>Please enter your 4 numbers below:</legend>
 
-      <form name="myForm" method="get" name="minMax" action="">
+      <form method="get" id="myForm" name="minMax" action="" onsubmit="createTable(); return false">
 
         <label for="minX">Minimum X Value:</label>
-        <input type="number" name="minX" id="minX" ><br><br>
+        <input type="number" name="minX" id="minX" required><br><br>
         <label for="maxX">Maximum X Value:</label>
-        <input type="number" name="maxX" id="maxX" ><br><br>
+        <input type="number" name="maxX" id="maxX" required><br><br>
         <label for="minY">Minimum Y Value:</label>
-        <input type="number" name="minY" id="minY" ><br><br>
+        <input type="number" name="minY" id="minY" required><br><br>
         <label for="maxY">Maximum Y Value:</label>
-        <input type="number" name="maxY" id="maxY" ><br><br>
+        <input type="number" name="maxY" id="maxY" required><br><br>
 
-        <input type="submit" value="Submit" onClick="createTable()">
+        <input type="submit" name="Submit" value="Submit" >
       </form>
 
-      <script>
-
-        $().ready(function() {
-          $("#myForm").validate({
-            rules: {
-              minX: {
-                required: true,
-                maxlength: 3
-              },
-              maxX: {
-                required: true,
-                maxlength: 3
-              },
-              minY: {
-                required: true,
-                maxlength: 3
-              },
-              maxY: {
-                required: true,
-                maxlength: 3
-              }
-            },
-            messages: {
-              minX: {
-                required: "Please enter a minimum value for x",
-                maxlength: "Please pick a number less than 4 digits"
-              },
-              maxX: {
-                required: "Please enter a maximum value for x",
-                maxlength: "Please pick a number less than 4 digits"
-              },
-              minY: {
-                required: "Please enter a minimum value for y",
-                maxlength: "Please pick a number less than 4 digits"
-              },
-              maxY: {
-                required: "Please enter a maximum value for y",
-                maxlength: "Please pick a number less than 4 digits"
-              },
-            },
-            submitHandler: function(form) {
-              var form = $("myForm");
-              form.submit();
-            }
-          });
-        });
-
-      </script>
-
       <p id="errors"></p>
-
     </fieldset>
 
     <div id="mTable">
+
     </div>
 
   </body>
