@@ -11,5 +11,7 @@ is also displayed.
 Some content in this file and script.js has been adapted from w3 schools examples
 and examples from the jQuery wiki
 
+I used a homework extension token for this assignment.
+
 Site is available here: https://jakecardillo.github.io/Homepage/HW8/scrabble.html 
 Repository: https://github.com/JakeCardillo/Homepage/tree/gh-pages/HW8
