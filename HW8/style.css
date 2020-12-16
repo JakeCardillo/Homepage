@@ -1,0 +1,81 @@
+/* Jake Cardillo */
+
+/* Styling for the scrabble board */
+.board {
+  background-image: url("graphics_data/Scrabble_Board_OneLine.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 100px;
+  width: 1305px;
+  border: burlywood outset 15px;
+}
+
+/* Styling for rack background image*/
+#rack {
+  background-image: url("graphics_data/scrabble-tile-holder-406774_640.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 200px;
+  width: 700px;
+}
+/* Styling for tiles*/
+.ui-widget-content {
+  float: left;
+  padding: 5px;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  top: 70px;
+  background: none;
+  border: none;
+}
+/* Styling for "drop" areas on screen (board and rack)*/
+.ui-widget-header {
+  float: left;
+  padding: 5px;
+  margin: 2px;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  top: 5px;
+  background: none;
+  border: none;
+}
+/* Ensures tile images get resized correctly*/
+img {
+  width: inherit;
+  height: inherit;
+}
+
+/* Random padding to make things look nice*/
+#draggable1 {
+  margin-left: 50px;
+}
+#square1 {
+  margin-left: 10px;
+}
+#buttons {
+  padding-top: 10px;
+}
+#info {
+  padding-left: 20px;
+}
+
+/* Styling for the rules box*/
+#rules {
+  margin: auto;
+  border: black solid 2px;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+/* Styling for the Scrabble title*/
+h1 {
+  text-align: center;
+  font-family: Georgia, serif;
+  color: gold;
+  font-weight: bold;
+  font-style: italic;
+}

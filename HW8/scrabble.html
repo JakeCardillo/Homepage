@@ -1,0 +1,253 @@
+<!--
+    scrabble.html
+    Jake Cardillo
+    Homework 8 - GUI Programming I
+    UMASS Lowell Comp Sci
+    jacob_cardillo@student.uml.edu
+
+    In this assignment I implemented one line of drag and drop scrabble.
+    The player can drag a tile from their rack to a board space and once they have
+    created a word longer than 2 letters, they can submit the word. A highscore
+    is also displayed.
+
+    Some content in this file and script.js has been adapted from w3 schools examples
+    and examples from the jQuery wiki
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scrabble</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+
+    //Function for draggable tiles to spaces on screen
+    $( function() {
+
+      //tile rack
+      $("#draggable1").draggable({revert: 'invalid'});
+      $("#draggable2").draggable({revert: 'invalid'});
+      $("#draggable3").draggable({revert: 'invalid'});
+      $("#draggable4").draggable({revert: 'invalid'});
+      $("#draggable5").draggable({revert: 'invalid'});
+      $("#draggable6").draggable({revert: 'invalid'});
+      $("#draggable7").draggable({revert: 'invalid'});
+
+      //board implementation
+      $("#square1").droppable({
+        drop: function(event, ui) { //find which letter is dropped and update the word
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 1);
+        },
+        out: function(event, ui) { //set that part of the word to blank space
+          updateWord("_", 1);
+        }
+      });
+      $("#square2").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 2);
+        },
+        out: function(event, ui) {
+          updateWord("_", 2);
+        }
+      });
+      $("#square3").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 3);
+        },
+        out: function(event, ui) {
+          updateWord("_", 3);
+        }
+      });
+      $("#square4").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 4);
+        },
+        out: function(event, ui) {
+          updateWord("_", 4);
+        }
+      });
+      $("#square5").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 5);
+        },
+        out: function(event, ui) {
+          updateWord("_", 5);
+        }
+      });
+      $("#square6").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 6);
+        },
+        out: function(event, ui) {
+          updateWord("_", 6);
+        }
+      });
+      $("#square7").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 7);
+        },
+        out: function(event, ui) {
+          updateWord("_", 7);
+        }
+      });
+      $("#square8").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 8);
+        },
+        out: function(event, ui) {
+          updateWord("_", 8);
+        }
+      });
+      $("#square9").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 9);
+        },
+        out: function(event, ui) {
+          updateWord("_", 9);
+        }
+      });
+      $("#square10").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 10);
+        },
+        out: function(event, ui) {
+          updateWord("_", 10);
+        }
+      });
+      $("#square11").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 11);
+        },
+        out: function(event, ui) {
+          updateWord("_", 11);
+        }
+      });
+      $("#square12").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 12);
+        },
+        out: function(event, ui) {
+          updateWord("_", 12);
+        }
+      });
+      $("#square13").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 13);
+        },
+        out: function(event, ui) {
+          updateWord("_", 13);
+        }
+      });
+      $("#square14").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 14);
+        },
+        out: function(event, ui) {
+          updateWord("_", 14);
+        }
+      });
+      $("#square15").droppable({
+        drop: function(event, ui) {
+          var letter = imgToLetter(ui.draggable.find("img").attr("src"));
+          updateWord(letter, 15);
+        },
+        out: function(event, ui) {
+          updateWord("_", 15);
+        }
+      });
+      $("hand").droppable();
+    } );
+    </script>
+  </head>
+  <body>
+    <h1>Scrabble</h1>
+
+    <div id="rules">
+      <p>Drag the letter tiles from the rack below onto the boord to make a word. <br>
+        Your word must contain more than 2 letters. <br>
+        To submit your score, press "Submit Word", if you can't make a word, press "Restart" <br>
+        Placing your tiles on a Double Word or Letter Square will apply a multiplier to your score.
+      </p>
+    </div>
+
+    <div id="info">
+      <p>Word: </p>
+      <p id="word"></p>
+      <p>Score: </p>
+      <p id="score"></p>
+      <p>Highscore: </p>
+      <p id="highscore"></p>
+    </div>
+
+    <div class="board">
+      <div id="square1" class="ui-widget-header"></div>
+      <div id="square2" class="ui-widget-header"></div>
+      <div id="square3" class="ui-widget-header"></div>
+      <div id="square4" class="ui-widget-header"></div>
+      <div id="square5" class="ui-widget-header"></div>
+      <div id="square6" class="ui-widget-header"></div>
+      <div id="square7" class="ui-widget-header"></div>
+      <div id="square8" class="ui-widget-header"></div>
+      <div id="square9" class="ui-widget-header"></div>
+      <div id="square10" class="ui-widget-header"></div>
+      <div id="square11" class="ui-widget-header"></div>
+      <div id="square12" class="ui-widget-header"></div>
+      <div id="square13" class="ui-widget-header"></div>
+      <div id="square14" class="ui-widget-header"></div>
+      <div id="square15" class="ui-widget-header"></div>
+    </div>
+
+    <div id="buttons">
+      <button type="button" name="submit" onClick="submitWord()">Submit Word</button>
+      <button type="button" name="restart" onclick="clearBoard()">Restart</button>
+    </div>
+
+    <div id="rack" class="ui-widget-header">
+      <div id="draggable1" class="ui-widget-content">
+        <img id="image1" src="graphics_data/Scrabble_Tile_H.jpg" alt="">
+      </div>
+      <div id="draggable2" class="ui-widget-content">
+        <img id="image2" src="graphics_data/Scrabble_Tile_E.jpg" alt="">
+      </div>
+      <div id="draggable3" class="ui-widget-content">
+        <img id="image3" src="graphics_data/Scrabble_Tile_L.jpg" alt="">
+      </div>
+      <div id="draggable4" class="ui-widget-content">
+        <img id="image4" src="graphics_data/Scrabble_Tile_L.jpg" alt="">
+      </div>
+      <div id="draggable5" class="ui-widget-content">
+        <img id="image5" src="graphics_data/Scrabble_Tile_O.jpg" alt="">
+      </div>
+      <div id="draggable6" class="ui-widget-content">
+        <img id="image6" src="graphics_data/Scrabble_Tile_O.jpg" alt="">
+      </div>
+      <div id="draggable7" class="ui-widget-content">
+        <img id="image7" src="graphics_data/Scrabble_Tile_O.jpg" alt="">
+      </div>
+    </div>
+    <script>
+      //clearBoard is used to reset the board, in this case it is run at the start to set everything up
+      clearBoard();
+    </script>
+  </body>
+</html>
