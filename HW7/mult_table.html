@@ -1,0 +1,130 @@
+<!--
+    mult_table.html
+    Jake Cardillo
+    Homework 7 - GUI Programming I
+    UMASS Lowell Comp Sci
+    jacob_cardillo@student.uml.edu
+
+    The following page contains a form to enter 4 numbers.
+    These numbers are then made into a multiplication table.
+    Error handling and table creation has been done in the table.js file.
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+
+    <!-- Links to styling and js -->
+    <link rel="stylesheet" href="table_styling.css"></link>
+    <script src="js/table.js"></script>
+
+    <!-- jQuery and validation CDN -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
+
+  </head>
+  <body>
+    <h2 id="title">Multiplication Table Generator</h2>
+
+    <!-- Number submit form, uses sliders that update the fields inside -->
+    <fieldset>
+      <legend>Please enter your 4 numbers below:</legend>
+
+      <!-- On submit, the table is created. This also occurs when changing the sliders -->
+      <form method="get" id="myForm" name="minMax" action="" onsubmit="createTable(); return false">
+
+        <label for="minX">Minimum X Value:</label>
+        <input type="number" name="minX" id="minX" onchange="update(1)"><br>
+        <div id="slider1"></div><br>
+        <label for="maxX">Maximum X Value:</label>
+        <input type="number" name="maxX" id="maxX" onchange="update(2)"><br>
+        <div id="slider2"></div><br>
+        <label for="minY">Minimum Y Value:</label>
+        <input type="number" name="minY" id="minY" onchange="update(3)"><br>
+        <div id="slider3"></div><br>
+        <label for="maxY">Maximum Y Value:</label>
+        <input type="number" name="maxY" id="maxY" onchange="update(4)"><br>
+        <div id="slider4"></div><br>
+
+        <input type="submit" name="Submit" value="Submit" >
+      </form>
+
+      <!-- placeholder for error messages -->
+      <p id="errors"></p>
+    </fieldset>
+
+    <!-- where the table goes when createTable() is run -->
+    <div id="mTable">
+    </div>
+
+    <!-- code for creating and styling sliders -->
+    <script>
+      var min = -100;
+      var max = 100;
+
+      $( function() {
+        $( "#slider1" ).slider({
+          orientation: "horizontal",
+          range: "min",
+          min: min,
+          max: max,
+          value: 1,
+          change: function (event, ui){ createTable();}, //update table when changed
+          slide: function( event, ui ) { //update sliders
+            $( "#minX" ).val( ui.value );
+          }
+        });
+        $( "#minX" ).val( $( "#slider1" ).slider( "value" ) );
+      } );
+      $( function() {
+        $( "#slider2" ).slider({
+          orientation: "horizontal",
+          range: "max",
+          min: min,
+          max: max,
+          value: 1,
+          change: function (event, ui){ createTable();},
+          slide: function( event, ui ) {
+            $( "#maxX" ).val( ui.value );
+          }
+        });
+        $( "#maxX" ).val( $( "#slider2" ).slider( "value" ) );
+      } );
+      $( function() {
+        $( "#slider3" ).slider({
+          orientation: "horizontal",
+          range: "min",
+          min: min,
+          max: max,
+          value: 1,
+          change: function (event, ui){ createTable();},
+          slide: function( event, ui ) {
+            $( "#minY" ).val( ui.value );
+          }
+        });
+        $( "#minY" ).val( $( "#slider3" ).slider( "value" ) );
+      } );
+      $( function() {
+        $( "#slider4" ).slider({
+          orientation: "horizontal",
+          range: "max",
+          min: min,
+          max: max,
+          value: 1,
+          change: function (event, ui){ createTable();},
+          slide: function( event, ui ) {
+            $( "#maxY" ).val( ui.value );
+          }
+        });
+        $( "#maxY" ).val( $( "#slider4" ).slider( "value" ) );
+      } );
+
+    </script>
+
+  </body>
+</html>

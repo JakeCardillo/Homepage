@@ -1,0 +1,51 @@
+/*
+    table_styling.css
+    Jake Cardillo
+    Homework 6 - GUI Programming I
+    UMASS Lowell Comp Sci
+    jacob_cardillo@student.uml.edu
+
+    The following page contains a form to enter 4 numbers.
+    These numbers are then made into a multiplication table.
+    Error handling and table creation has been done in table.js.
+*/
+
+fieldset {
+  float: left;
+  background-color: #eeeeee;
+}
+legend {
+  padding: 5px;
+  background-color: white;
+  background-color: gray;
+}
+
+#mTable {
+  float: left;
+  padding: 20px;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: black;
+  text-align: center;
+}
+th, td {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #666666;
+}
+
+tr:nth-child(n+2) td:nth-child(n+2){
+  background-color: #e0e0e0;
+}
+
+p {
+  float: left;
+  color: red;
+}
